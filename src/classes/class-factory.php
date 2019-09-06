@@ -7,13 +7,13 @@
  * @author  Thanks to IT
  */
 
-namespace ThanksToIT\ERWC\Design_Pattern;
+namespace ThanksToIT\DPWP\Design_Pattern;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\ERWC\Design_Pattern\Factory' ) ) {
+if ( ! class_exists( 'ThanksToIT\DPWP\Design_Pattern\Factory' ) ) {
 
 	class Factory {
 
