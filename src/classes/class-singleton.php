@@ -29,7 +29,7 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Singleton' ) ) {
 		}
 
 		/**
-		 * @return self
+		 * @return $this
 		 */
 		public static function get_instance() {
 			$cls = get_called_class(); // late-static-bound class name
