@@ -7,13 +7,13 @@
  * @author  Thanks to IT
  */
 
-namespace ThanksToIT\DPWP\Design_Pattern;
+namespace ThanksToIT\DPWP;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\DPWP\Design_Pattern\Singleton' ) ) {
+if ( ! class_exists( 'ThanksToIT\DPWP\Singleton' ) ) {
 
 	class Singleton {
 		private static $instances = array();
