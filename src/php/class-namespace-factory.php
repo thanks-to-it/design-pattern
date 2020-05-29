@@ -66,7 +66,6 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Factory\Namespace_Factory' ) ) {
 			if ( ! class_exists( $class ) ) {
 				throw new \Exception( sprintf( $this->messages['class_doesnt_exist'], $class ) );
 			}
-
 			if ( $check_derived_class ) {
 				foreach ( $this->derived_namespaces as $namespace ) {
 					$derived_class = $this->get_full_class( $namespace, $class_name );
@@ -81,7 +80,6 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Factory\Namespace_Factory' ) ) {
 					}
 				}
 			}
-
 			if ( ! empty( $subclass_to_check ) && is_subclass_of( $class, $subclass_to_check ) ) {
 				throw new \Exception( sprintf( __( $this->messages['class_doesnt_inherit'] ), $class, $subclass_to_check ) );
 			}
