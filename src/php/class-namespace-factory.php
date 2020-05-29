@@ -75,7 +75,7 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Factory\Namespace_Factory' ) ) {
 							$class = $derived_class;
 							break;
 						} else {
-							throw new \Exception( sprintf( $this->messages['class_doesnt_inherit'], $class, $derived_class ) );
+							throw new \Exception( sprintf( $this->messages['class_doesnt_inherit'], $derived_class, $class ) );
 							break;
 						}
 					}
