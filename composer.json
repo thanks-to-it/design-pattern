@@ -16,7 +16,7 @@
   },  
   "autoload": {
     "classmap": [
-      "src/classes/"
+      "src/php/"
     ],
     "exclude-from-classmap": [
       "/Tests/",
