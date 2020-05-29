@@ -80,7 +80,7 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Factory\Namespace_Factory' ) ) {
 					}
 				}
 			}
-			if ( ! empty( $subclass_to_check ) && is_subclass_of( $class, $subclass_to_check ) ) {
+			if ( ! empty( $subclass_to_check ) && ! is_subclass_of( $class, $subclass_to_check ) ) {
 				throw new \Exception( sprintf( __( $this->messages['class_doesnt_inherit'] ), $class, $subclass_to_check ) );
 			}
 			return new $class();
