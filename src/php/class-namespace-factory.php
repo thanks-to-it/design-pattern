@@ -51,10 +51,10 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Factory\Namespace_Factory' ) ) {
 		}
 
 		/**
-		 * create.
+		 * Creates the class.
 		 *
 		 * @param string $class_name
-		 * @param null $check_derived_class
+		 * @param bool $check_derived_class
 		 * @param string $subclass_to_check
 		 *
 		 * @return mixed
