@@ -25,18 +25,42 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Factory\Namespace_Factory' ) ) {
 			'class_doesnt_inherit' => 'Class %s must inherit %s',
 		);
 
+		/**
+		 * Namespace_Factory constructor.
+		 *
+		 * @param string $base_namespace
+		 * @param array $derived_namespaces
+		 * @param bool $check_derived_class
+		 */
 		public function __construct( $base_namespace = '', $derived_namespaces = array(), $check_derived_class = false ) {
 			$this->base_namespace      = $base_namespace;
 			$this->derived_namespaces  = $derived_namespaces;
 			$this->check_derived_class = $check_derived_class;
 		}
 
+		/**
+		 * get_full_class.
+		 *
+		 * @param $namespace
+		 * @param $name
+		 *
+		 * @return string
+		 */
 		function get_full_class( $namespace, $name ) {
 			return '\\' . $this->remove_namespace_slashes( $namespace ) . '\\' . $this->remove_namespace_slashes( $name );
 		}
 
-
-		function create( $class_name = '', $subclass_to_check = '', $check_derived_class = null ) {
+		/**
+		 * create.
+		 *
+		 * @param string $class_name
+		 * @param null $check_derived_class
+		 * @param string $subclass_to_check
+		 *
+		 * @return mixed
+		 * @throws \Exception
+		 */
+		function create( $class_name = '', $check_derived_class = null, $subclass_to_check = '' ) {
 			$check_derived_class = is_null( $check_derived_class ) ? $this->check_derived_class : $check_derived_class;
 			$class               = $this->get_full_class( $this->base_namespace, $class_name );
 			if ( ! class_exists( $class ) ) {
@@ -64,6 +88,13 @@ if ( ! class_exists( 'ThanksToIT\DPWP\Factory\Namespace_Factory' ) ) {
 			return new $class();
 		}
 
+		/**
+		 * remove_namespace_slashes.
+		 *
+		 * @param $string
+		 *
+		 * @return string
+		 */
 		function remove_namespace_slashes( $string ) {
 			return trim( $string, '\\' );
 		}
